@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TaskStatus {
+  NEW
+  IN_PROGRESS
+  COMPLETED
+}
+
+model Task {
+  id               String     @id @default(cuid())
+  summary          String
+  description      String?
+  notes            String?
+  requester        String?
+  location         String?
+  estimatedMinutes Int?
+
+  status     TaskStatus @default(NEW)
+  started    Boolean    @default(false)
+  startedAt  DateTime?
+  completed  Boolean    @default(false)
+  completedAt DateTime?
+
+  scheduledStart DateTime?
+  scheduledEnd   DateTime?
+
+  materials Material[]
+  tools     Tool[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Material {
+  id          String  @id @default(cuid())
+  taskId      String
+  task        Task    @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  description String
+  quantity    Float   @default(1)
+  unit        String?
+  unitPrice   Float?
+  vendor      String?
+  link        String?
+  haveIt      Boolean @default(false)
+}
+
+model Tool {
+  id     String @id @default(cuid())
+  taskId String
+  task   Task   @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  name   String
+}
