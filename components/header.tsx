@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { LayoutDashboard, ListTodo, Calendar, Plus } from "lucide-react";
 
 export function Header() {
@@ -31,7 +32,8 @@ export function Header() {
               <span className="hidden sm:inline">Calendar</span>
             </Link>
           </Button>
-          <Button size="sm" className="ml-auto" asChild>
+          <ThemeToggle className="ml-auto md:ml-0" />
+          <Button size="sm" className="ml-2" asChild>
             <Link href="/tasks/new">
               <Plus className="h-4 w-4 sm:mr-2" aria-hidden />
               <span className="hidden sm:inline">New Task</span>

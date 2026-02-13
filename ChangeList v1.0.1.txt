@@ -1,0 +1,42 @@
+Change List v1.0.1
+
+- 1. app/globals.css – theme variables
+Five hex colors are mapped into the existing semantic variables:
+Hex	Role in theme
+2E2836 (dark)	Main text (foreground), dark mode background
+6A2E35 (burgundy)	Primary (buttons, links), destructive, focus ring
+77A0A9 (teal)	Secondary (secondary buttons, badges), borders/inputs (light tint)
+BE8A60 (brown)	Muted text, muted backgrounds
+E1AA7D (tan)	Accent (hover, highlights), dark mode text
+Light theme: Warm off-white background, burgundy primary, teal secondary, tan accent.
+Dark theme: 2E2836 background, tan text, burgundy and teal for primary/secondary.
+2. tailwind.config.ts – named palette
+You can use the palette directly in classes if you want:
+bg-palette-teal, text-palette-burgundy, border-palette-tan, etc.
+palette-teal, palette-tan, palette-brown, palette-burgundy, palette-dark.
+Result
+Buttons and links use the burgundy.
+Secondary actions and some badges use the teal.
+Hover/accent areas use the tan.
+Text and dark surfaces use the dark and brown.
+
+- Dark mode toggle
+lib/theme.tsx – Theme context and provider that:
+Stores theme as "light" or "dark" and syncs it to document.documentElement (Tailwind’s .dark class).
+Persists the choice in localStorage under family-task-tracker-theme.
+Uses prefers-color-scheme: dark when there’s no saved value.
+components/theme-toggle.tsx – Header button that switches theme and shows a sun icon in dark mode and a moon icon in light mode, with an accessible label.
+app/layout.tsx – Inline script in <head> that runs before paint and applies the saved (or system) theme so the first paint matches the user’s choice and avoids a flash.
+components/providers.tsx – Wraps the app with ThemeProvider.
+components/header.tsx – Renders ThemeToggle in the nav (before the “New Task” button).
+The toggle is in the top nav; choosing light or dark updates the UI and is remembered on reload. Your existing globals.css .dark variables are used for dark styling.
+
+- Update in app/globals.css
+For viewports ≤ 480px (including 360×740):
+The FullCalendar header toolbar is stacked vertically instead of one row, so all three parts sit on separate rows:
+Prev / Next / Today
+Title (e.g. “February 2026”)
+Month / Week / Day view buttons
+Each row is centered and can wrap if needed, so the “day” button stays on screen.
+Toolbar title font size is slightly reduced so the middle row fits better.
+With this, the calendar header no longer overflows on narrow screens and the day button is no longer cut off on the right. The calendar content stays in view and the layout stays centered.

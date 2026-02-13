@@ -10,6 +10,14 @@ export default {
   theme: {
     extend: {
       colors: {
+        /* Palette: 77A0A9, E1AA7D, BE8A60, 6A2E35, 2E2836 */
+        palette: {
+          teal: "#77A0A9",
+          tan: "#E1AA7D",
+          brown: "#BE8A60",
+          burgundy: "#6A2E35",
+          dark: "#2E2836",
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: "hsl(var(--card))",
