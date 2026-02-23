@@ -23,7 +23,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var k='family-task-tracker-theme';var s=typeof localStorage!='undefined'&&localStorage.getItem(k);var d=s==='dark'||(!s&&typeof matchMedia!='undefined'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.add(d?'dark':'light');})();`,
+            __html: `(function(){var k='family-task-tracker-theme';var s=typeof localStorage!='undefined'&&localStorage.getItem(k);var d=s==='dark'||(!s&&typeof matchMedia!='undefined'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.add(d?'dark':'light');var pk='family-task-tracker-color-palette';var ps=typeof localStorage!='undefined'&&localStorage.getItem(pk);if(ps==='ocean'||ps==='violet')document.documentElement.setAttribute('data-color-theme',ps);})();`,
           }}
         />
       </head>

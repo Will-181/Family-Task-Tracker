@@ -15,9 +15,9 @@ export default function NewTaskPage() {
 
   const handleSubmit = async (data: TaskCreateMinimalInput) => {
     try {
-      const task = await createTask.mutateAsync(data);
+      await createTask.mutateAsync(data);
       toast.success("Task created");
-      router.push(`/tasks/${task.id}`);
+      router.push("/");
       router.refresh();
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Failed to create task");
@@ -28,7 +28,7 @@ export default function NewTaskPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 p-4 md:p-6 pb-24 md:pb-6 max-w-2xl mx-auto w-full">
+      <main className="flex-1 p-4 md:p-6 max-w-2xl mx-auto w-full">
         <div className="flex items-center gap-4 mb-6">
           <Button variant="ghost" size="sm" asChild>
             <Link href="/tasks">Back</Link>

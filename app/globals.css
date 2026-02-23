@@ -48,6 +48,94 @@
     --input: 264 12% 28%;
     --ring: 28 62% 69%;
   }
+
+  /* Ocean palette: 1D3461, 1F487E, 376996, 6290C8, 95ABC6 */
+  [data-color-theme="ocean"] {
+    --background: 213 28% 92%;
+    --foreground: 213 53% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 213 53% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 53% 25%;
+    --primary: 213 45% 41%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 213 48% 58%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 213 28% 90%;
+    --muted-foreground: 213 45% 35%;
+    --accent: 213 60% 31%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 213 60% 31%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 213 48% 85%;
+    --input: 213 48% 85%;
+    --ring: 213 45% 41%;
+  }
+  [data-color-theme="ocean"].dark {
+    --background: 213 53% 25%;
+    --foreground: 213 28% 67%;
+    --card: 213 60% 22%;
+    --card-foreground: 213 28% 67%;
+    --popover: 213 60% 22%;
+    --popover-foreground: 213 28% 67%;
+    --primary: 213 48% 58%;
+    --primary-foreground: 213 53% 25%;
+    --secondary: 213 45% 41%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 213 60% 28%;
+    --muted-foreground: 213 28% 75%;
+    --accent: 213 48% 58%;
+    --accent-foreground: 213 53% 25%;
+    --destructive: 213 45% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 213 45% 35%;
+    --input: 213 45% 35%;
+    --ring: 213 48% 58%;
+  }
+
+  /* Violet palette: 22162B, 451F55, 724E91, E54F6D, F8C630 */
+  [data-color-theme="violet"] {
+    --background: 43 94% 96%;
+    --foreground: 278 35% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 278 35% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 278 35% 13%;
+    --primary: 278 29% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 348 75% 61%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 43 94% 90%;
+    --muted-foreground: 278 47% 28%;
+    --accent: 348 75% 61%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 348 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 278 29% 80%;
+    --input: 278 29% 80%;
+    --ring: 278 29% 44%;
+  }
+  [data-color-theme="violet"].dark {
+    --background: 278 35% 13%;
+    --foreground: 43 94% 58%;
+    --card: 278 47% 18%;
+    --card-foreground: 43 94% 58%;
+    --popover: 278 47% 18%;
+    --popover-foreground: 43 94% 58%;
+    --primary: 348 75% 61%;
+    --primary-foreground: 278 35% 13%;
+    --secondary: 278 29% 44%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 278 47% 22%;
+    --muted-foreground: 43 94% 70%;
+    --accent: 43 94% 58%;
+    --accent-foreground: 278 35% 13%;
+    --destructive: 348 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 278 29% 28%;
+    --input: 278 29% 28%;
+    --ring: 348 75% 61%;
+  }
 }
 
 @layer base {

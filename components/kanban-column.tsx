@@ -49,7 +49,7 @@ export function KanbanColumn({ title, status, tasks, onStatusChange }: KanbanCol
   return (
     <Card className="flex flex-col min-w-[280px] max-w-[360px] flex-1">
       <CardHeader className="py-3 px-4 border-b">
-        <h3 className="font-semibold text-sm">{title}</h3>
+        <h3 className="font-semibold text-sm">{title} ({tasks.length})</h3>
       </CardHeader>
       <CardContent
         className="flex-1 p-3 space-y-2 min-h-[200px] overflow-auto"
